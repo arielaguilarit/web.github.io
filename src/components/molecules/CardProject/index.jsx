@@ -1,19 +1,17 @@
 import PropTypes from "prop-types";
-import Button from "../../atoms/Button";
 import { Actions, Card, Content } from "./styles";
-const CardProject = ({ nameProject, description, stack, src, alt }) => {
+const CardProject = ({ nameProject, description, stack = [], src, alt, status }) => {
   return (
     <Card>
       <Content>
         <div>
           <h3>{nameProject}</h3>
           <p>{description}</p>
-          <p>{stack.join(" / ")}</p>
+          <p>{stack?.join(" / ")}</p>
         </div>
 
         <Actions>
-          <Button label={"Ver Detalles"} />
-          <Button label={"Ir a Github"} />
+          <span>{status}</span>
         </Actions>
       </Content>
       <div>
@@ -29,6 +27,7 @@ CardProject.propTypes = {
   stack: PropTypes.array.isRequired,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
 };
 
 export default CardProject;

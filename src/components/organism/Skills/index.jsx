@@ -1,83 +1,75 @@
-import { BiLogoTypescript } from "react-icons/bi";
-import { FaAws, FaCss3Alt, FaGitAlt, FaGithub, FaHtml5 } from "react-icons/fa";
-import { FaGitlab, FaNodeJs } from "react-icons/fa6";
-import { GrReactjs } from "react-icons/gr";
-import { RiJavascriptFill } from "react-icons/ri";
-import {
-  SiAmazondynamodb,
-  SiMongodb,
-  SiNestjs,
-  SiPostgresql,
-  SiRedis,
-  SiStyledcomponents,
-  SiTailwindcss,
-} from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-import { LogosSkills } from "./styles";
+import { SkillGroups } from "./styles";
 
-const index = () => {
+const skillGroups = [
+  {
+    title: "Arquitectura y liderazgo",
+    skills: [
+      "Arquitectura frontend y backend",
+      "Microservicios y microfrontends",
+      "Diseño de APIs y BFF",
+      "Liderazgo técnico y code review",
+    ],
+  },
+  {
+    title: "Desarrollo de plataformas",
+    skills: [
+      "React, TypeScript y Node.js",
+      "NestJS, Express y APIs REST",
+      "Componentes reutilizables y design systems",
+      "Clean Code, SOLID y testing",
+    ],
+  },
+  {
+    title: "Cloud y datos",
+    skills: [
+      "AWS Lambda, API Gateway y CloudFront",
+      "PostgreSQL, MongoDB, DynamoDB y Redis",
+      "Arquitecturas serverless y event driven",
+      "Seguridad, IAM y Secrets Manager",
+    ],
+  },
+  {
+    title: "Entrega y operación",
+    skills: [
+      "CI/CD con GitHub Actions y GitLab CI",
+      "Docker, Kubernetes, EKS y Helm",
+      "Observabilidad con logs, métricas y dashboards",
+      "Performance y monitoreo de aplicaciones",
+    ],
+  },
+  {
+    title: "AI Engineering",
+    skills: [
+      "Agentes para desarrollo y refactorización",
+      "Automatización de pruebas y documentación",
+      "Asistencia para code review y arquitectura",
+      "Integración responsable de IA en equipos",
+    ],
+  },
+];
+
+const Skills = () => {
   return (
     <>
-      <h2>Skills...</h2>
-      <LogosSkills>
-        <div>
-          <FaHtml5 size={50} />
-        </div>
-        <div>
-          <FaCss3Alt size={50} />
-        </div>
-        <div>
-          <RiJavascriptFill size={60} />
-        </div>
-        <div>
-          <BiLogoTypescript size={50} />
-        </div>
-        <div>
-          <GrReactjs size={50} />
-        </div>
-        <div>
-          <FaNodeJs size={50} />
-        </div>
-        <div>
-          <SiTailwindcss size={50} />
-        </div>
-        <div>
-          <SiStyledcomponents size={60} />
-        </div>
-        <div>
-          <FaGitAlt size={50} />
-        </div>
-        <div>
-          <FaGitlab size={50} />
-        </div>
-        <div>
-          <FaGithub size={50} />
-        </div>
-        <div>
-          <SiMongodb size={50} />
-        </div>
-        <div>
-          <SiPostgresql size={50} />
-        </div>
-
-        <div>
-          <TbBrandNextjs size={50} />
-        </div>
-        <div>
-          <SiNestjs size={50} />
-        </div>
-        <div>
-          <SiRedis size={50} />
-        </div>
-        <div>
-          <FaAws size={50} />
-        </div>
-        <div>
-          <SiAmazondynamodb size={50} />
-        </div>
-      </LogosSkills>
+      <h2>Capacidades para sistemas que deben escalar</h2>
+      <p>
+        Un enfoque integral: desde la decisión de arquitectura hasta la entrega,
+        observabilidad y evolución continua del producto.
+      </p>
+      <SkillGroups>
+        {skillGroups.map((group) => (
+          <article key={group.title}>
+            <h3>{group.title}</h3>
+            <ul>
+              {group.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </SkillGroups>
     </>
   );
 };
 
-export default index;
+export default Skills;

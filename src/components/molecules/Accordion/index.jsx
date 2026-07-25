@@ -10,11 +10,9 @@ import {
 } from "./styles";
 
 const Accordion = React.memo(function Accordion({
-  position,
-  company,
-  from,
-  until,
+  title,
   description,
+  highlights,
 }) {
   const [isActive, setIsActive] = useState(false);
   const [height, setHeight] = useState(0);
@@ -41,15 +39,16 @@ const Accordion = React.memo(function Accordion({
 
   return (
     <ContainerAccordion>
-      <HeaderAccordion ref={headerRef} onClick={toggleAccordion}>
+      <HeaderAccordion
+        ref={headerRef}
+        type="button"
+        aria-expanded={isActive}
+        onClick={toggleAccordion}
+      >
         <TitleContainer>
-          <h5>{position}</h5>
-          <h6>{company}</h6>
+          <h3>{title}</h3>
         </TitleContainer>
         <DateContainer>
-          <h5>
-            {from} - {until}
-          </h5>
           <ToggleIcon>{isActive ? "-" : "+"}</ToggleIcon>
         </DateContainer>
       </HeaderAccordion>
@@ -60,17 +59,20 @@ const Accordion = React.memo(function Accordion({
         onTransitionEnd={closeAccordion}
       >
         <p>{description}</p>
+        <ul>
+          {highlights.map((highlight) => (
+            <li key={highlight}>{highlight}</li>
+          ))}
+        </ul>
       </ContentAccordion>
     </ContainerAccordion>
   );
 });
 
 Accordion.propTypes = {
-  position: PropTypes.string.isRequired,
-  company: PropTypes.string.isRequired,
-  from: PropTypes.string.isRequired,
-  until: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  highlights: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Accordion;

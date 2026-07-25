@@ -8,9 +8,16 @@ export default createGlobalStyle`
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    
-    color: ${(props) => (props.darkMode ? "white" : "black")};
+    min-width: 320px;
+    background: #f8fafc;
+    color: ${(props) => (props.darkMode ? "white" : "#0f172a")};
+    line-height: 1.5;
 
      /* width */
   ::-webkit-scrollbar {

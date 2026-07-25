@@ -1,66 +1,69 @@
 const experiences = [
   {
     id: 1,
-    position: "Full Stack Developer",
-    company: "ABC Company",
-    from: "January 2018",
-    until: "Present",
+    title: "Evolución de plataformas corporativas",
     description:
-      "Developed and maintained full stack applications using React.js, Node.js, Express, MongoDB, AWS (S3, EC2), and Redis.",
+      "Diseño y evolución de aplicaciones empresariales orientadas a clientes de negocio, equilibrando continuidad operativa, modernización y velocidad de entrega.",
+    highlights: [
+      "Arquitectura frontend y backend",
+      "Integración de APIs y optimización de performance",
+      "Estrategia de componentes reutilizables",
+    ],
   },
   {
     id: 2,
-    position: "Frontend Developer",
-    company: "XYZ Tech",
-    from: "March 2019",
-    until: "July 2020",
+    title: "Plataformas operacionales y backoffice",
     description:
-      "Designed and implemented user interfaces using React.js and Redux. Collaborated with backend developers to integrate frontend with server-side logic.",
+      "Construcción de módulos de negocio e integraciones para equipos internos, con foco en experiencia de usuario, confiabilidad y automatización de procesos.",
+    highlights: [
+      "Módulos de negocio e integraciones empresariales",
+      "Arquitectura de componentes y UX",
+      "Modernización progresiva de aplicaciones",
+    ],
   },
   {
     id: 3,
-    position: "Backend Developer",
-    company: "123 Solutions",
-    from: "June 2020",
-    until: "December 2021",
+    title: "Arquitectura de microfrontends",
     description:
-      "Built RESTful APIs and microservices using Nest.js. Integrated with various databases including PostgreSQL, MongoDB, and DynamoDB.",
+      "Participación en el diseño y evolución de plataformas frontend desacopladas para permitir autonomía de equipos y despliegues independientes.",
+    highlights: [
+      "Module Federation y librerías compartidas",
+      "Estrategias de versionado y gobernanza",
+      "Optimización de performance y despliegue",
+    ],
   },
   {
     id: 4,
-    position: "Database Engineer",
-    company: "Tech Innovations",
-    from: "August 2017",
-    until: "May 2019",
+    title: "Servicios Backend For Frontend",
     description:
-      "Managed and optimized databases on AWS (RDS, DynamoDB). Implemented data modeling, indexing, and performance tuning strategies.",
+      "Diseño e implementación de capas de integración que simplifican el consumo de servicios y centralizan responsabilidades transversales.",
+    highlights: [
+      "Orquestación de APIs e integraciones",
+      "Autenticación, autorización y manejo de errores",
+      "Observabilidad y resiliencia operacional",
+    ],
   },
   {
     id: 5,
-    position: "DevOps Engineer",
-    company: "Cloud Systems",
-    from: "April 2018",
-    until: "September 2019",
+    title: "Arquitecturas basadas en eventos",
     description:
-      "Automated deployment pipelines using AWS CodePipeline and CodeDeploy. Implemented infrastructure as code using Terraform and AWS CloudFormation.",
+      "Implementación de procesos asíncronos para desacoplar dominios de negocio y aumentar la capacidad de integración entre servicios.",
+    highlights: [
+      "Publicación y consumo de eventos",
+      "Reintentos y procesamiento distribuido",
+      "Kafka, servicios cloud y patrones event driven",
+    ],
   },
   {
     id: 6,
-    position: "Software Engineer",
-    company: "Innovative Solutions",
-    from: "November 2019",
-    until: "March 2021",
+    title: "Soluciones cloud native en AWS",
     description:
-      "Developed scalable and efficient applications using Node.js, Express, and Redis. Implemented caching strategies to improve performance.",
-  },
-  {
-    id: 7,
-    position: "AWS Cloud Architect",
-    company: "SkyTech Solutions",
-    from: "January 2020",
-    until: "Present",
-    description:
-      "Designed and implemented cloud infrastructure on AWS. Utilized services such as EC2, S3, Lambda, DynamoDB, and Elasticache for various projects.",
+      "Diseño y operación de servicios serverless y contenedorizados, priorizando seguridad, observabilidad y eficiencia operacional.",
+    highlights: [
+      "Lambda, API Gateway, EventBridge, SQS y SNS",
+      "Docker, Kubernetes, EKS y CI/CD",
+      "CloudWatch, métricas, logs y alertas",
+    ],
   },
 ];
 

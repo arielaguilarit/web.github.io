@@ -6,7 +6,7 @@ import { Main } from "./styles";
 const index = () => {
   return (
     <>
-      <StickySubTitle title={"Experience"} />
+      <StickySubTitle title={"Experiencia"} />
       <Main>
         {experiences.map((job) => (
           <Accordion key={job.id} {...job} />

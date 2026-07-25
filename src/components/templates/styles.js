@@ -1,81 +1,81 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-  position: relative;
-  display: grid;
-  grid-template-areas: "aside main";
-  grid-template-columns: minmax(min-content, 300px) minmax(200px, 1fr);
-  grid-template-rows: 100%;
-  color: black;
-  width: 100%;
-  overflow-y: auto;
-  height: 100vh;
+  min-height: 100vh;
+  color: #0f172a;
 
-  @media (max-width: 424px) {
-    grid-template-areas:
-      "aside"
-      "main";
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
 export const Aside = styled.aside`
-  grid-area: aside;
-  background-color: green;
   position: fixed;
-  height: 100vh;
-  width: 300px;
+  inset: 0 auto 0 0;
+  width: 320px;
+  background: linear-gradient(160deg, #0f766e 0%, #115e59 55%, #0f172a 100%);
+  box-shadow: 12px 0 32px rgba(15, 23, 42, 0.12);
+  z-index: 2;
+
+  @media (max-width: 768px) {
+  position: fixed;
+    position: relative;
+    width: 100%;
+    min-height: auto;
+  }
 `;
 
 export const Main = styled.section`
-  grid-area: main;
-
-  position: absolute;
+  margin-left: 320px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   & > section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
-    min-height: 100vh;
-    padding: 24% 13%;
-    min-width: 100%;
-    @media (max-width: 424px) {
-      height: auto;
-    }
+    gap: 20px;
+    min-height: 70vh;
+    padding: 88px clamp(24px, 7vw, 112px);
+    scroll-margin-top: 16px;
   }
 
   & > section:nth-child(odd) {
-    background-color: #77de68;
+    background-color: #f8fafc;
   }
 
   & > section:nth-child(even) {
-    background-color: #a6ff92;
+    background-color: #ffffff;
   }
-`;
 
-export const MenuButton = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background-color: yellow;
-  position: fixed;
-  right: 10px;
-  bottom: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-`;
+  h2 {
+    color: #0f172a;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.04em;
+  }
 
-export const SubTitle = styled.h2`
-  text-align: start;
-  font-size: 36px;
-  font-weight: 800;
+  p {
+    color: #475569;
+    max-width: 68ch;
+  }
+
+  strong {
+    color: #0f766e;
+  }
+
+  a {
+    color: #0f766e;
+    font-weight: 700;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+
+    & > section {
+      min-height: auto;
+      padding: 56px 24px;
+    }
+  }
 `;

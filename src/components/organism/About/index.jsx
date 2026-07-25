@@ -1,18 +1,25 @@
-const index = () => {
+const About = () => {
   return (
     <>
-      <h2>Acerca de...</h2>
+      <h2>Ingeniería para productos que deben evolucionar</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        perspiciatis eligendi nihil voluptate dolorem magni impedit placeat quis
-        fugiat odio at perferendis facere quae dignissimos, natus debitis
-        consequuntur numquam eum. Fugit sunt porro unde dicta repudiandae id,
-        earum accusamus soluta aut qui! Praesentium voluptate earum magni labore
-        aut, ducimus fugiat vitae culpa nulla eos ab perferendis ex officiis
-        quod molestiae.
+        Diseño y lidero la evolución de productos digitales que necesitan crecer
+        con seguridad, calidad y velocidad. Mi foco está en traducir problemas
+        complejos en plataformas sostenibles para equipos y negocios.
+      </p>
+      <p>
+        Combino liderazgo técnico, desarrollo full stack y arquitectura cloud
+        para modernizar aplicaciones, diseñar APIs y construir soluciones
+        escalables. Trabajo con una mirada pragmática: buenas decisiones de
+        arquitectura, automatización y experiencias que entregan valor.
+      </p>
+      <p>
+        Actualmente profundizo en <strong>AI Engineering</strong> y en cómo los
+        agentes inteligentes pueden elevar el desarrollo, las pruebas, el code
+        review y la operación de software.
       </p>
     </>
   );
 };
 
-export default index;
+export default About;

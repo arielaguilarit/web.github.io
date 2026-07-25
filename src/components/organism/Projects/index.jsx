@@ -6,7 +6,7 @@ import { Main } from "./styles";
 const index = () => {
   return (
     <>
-      <StickySubTitle title={"Projects"} />
+      <StickySubTitle title={"Casos de arquitectura"} />
       <Main>
         {projects.map((p) => (
           <CardProject key={p.id} {...p} />
