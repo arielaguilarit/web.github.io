@@ -7,9 +7,9 @@ describe("Leadership", () => {
     render(<Leadership />);
 
     expect(
-      screen.getByRole("heading", { name: "Mi enfoque como Tech Lead" }),
+      screen.getByRole("heading", { name: "Mi enfoque" }),
     ).toBeInTheDocument();
-    expect(screen.getAllByRole("article")).toHaveLength(3);
-    expect(screen.getByText("Decisiones que escalan")).toBeInTheDocument();
+    expect(screen.getAllByRole("article")).toHaveLength(6);
+    expect(screen.getByText("Leer el sistema y sus restricciones")).toBeInTheDocument();
   });
 });

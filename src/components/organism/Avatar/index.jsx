@@ -5,18 +5,21 @@ import { ContainerAvatar, Icons, Img } from "./styles";
 const Avatar = () => {
   return (
     <ContainerAvatar>
-      <p className="eyebrow">Tech Lead · Software Engineer</p>
+      <p className="eyebrow">Technical Lead</p>
       <h1>Ariel Aguilar</h1>
       <Img
         src="https://avatars.githubusercontent.com/u/1995779?v=4"
         alt="Ariel Aguilar"
+        width="152"
+        height="152"
+        fetchPriority="high"
       />
       <p>
-        Lidero equipos y diseño plataformas web escalables, cloud native y
-        centradas en resolver problemas de negocio.
+        Más de diez años ayudando a evolucionar software, plataformas y
+        prácticas de ingeniería.
       </p>
       <p className="availability">
-        Arquitectura · Modernización · AI Engineering
+        Plataformas · Arquitectura · Equipos
       </p>
       <Icons>
         <a

@@ -6,11 +6,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-IA-context.md
 node_modules
 dist
 dist-ssr
 *.local
+BRAND_CONTEXT.md
+CAREER_STORY.md
+IMAGE_PROMPTS.md
 
 # Editor directories and files
 .vscode/*

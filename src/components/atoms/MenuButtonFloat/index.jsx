@@ -6,55 +6,55 @@ const MenuButtonFloat = () => {
   const [isVisible, setIsVisible] = useState(false);
   const menuRef = useRef(null);
 
-  const toggleMenu = (e) => {
-    e.stopPropagation();
-    setIsVisible(!isVisible);
-  };
-
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsVisible(false);
-    }
-  };
-
-  const closeMenu = () => {
-    setIsVisible(false);
-  };
-
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible) return undefined;
 
-    document.addEventListener("mousedown", handleClickOutside);
+    const closeOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsVisible(false);
+      }
+    };
+    const closeWithEscape = (event) => {
+      if (event.key === "Escape") setIsVisible(false);
+    };
+
+    document.addEventListener("mousedown", closeOutside);
+    document.addEventListener("keydown", closeWithEscape);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", closeOutside);
+      document.removeEventListener("keydown", closeWithEscape);
     };
   }, [isVisible]);
+
+  const closeMenu = () => setIsVisible(false);
 
   return (
     <>
       <MenuButton
         type="button"
-        aria-label="Abrir navegación"
+        aria-label={`${isVisible ? "Cerrar" : "Abrir"} navegación`}
+        aria-controls="main-navigation"
         aria-expanded={isVisible}
-        onClick={toggleMenu}
+        onClick={() => setIsVisible((visible) => !visible)}
       >
-        <CgMenuGridO size={20} />
+        <CgMenuGridO size={20} aria-hidden="true" />
       </MenuButton>
 
       {isVisible && (
-        <Menu ref={menuRef} aria-label="Navegación principal">
-          <MenuItem href="#about" onClick={closeMenu}>Perfil</MenuItem>
-          <MenuItem href="#leadership" onClick={closeMenu}>
-            Enfoque Tech Lead
-          </MenuItem>
-          <MenuItem href="#skills" onClick={closeMenu}>Capacidades</MenuItem>
-          <MenuItem href="#projects" onClick={closeMenu}>
-            Casos de arquitectura
-          </MenuItem>
-          <MenuItem href="#experience" onClick={closeMenu}>
-            Experiencia enterprise
-          </MenuItem>
-          <MenuItem href="#contact" onClick={closeMenu}>Contacto</MenuItem>
+        <Menu
+          as="nav"
+          id="main-navigation"
+          ref={menuRef}
+          aria-label="Navegación principal"
+        >
+          <MenuItem href="#about" onClick={closeMenu}>Presentación</MenuItem>
+          <MenuItem href="#leadership" onClick={closeMenu}>Mi enfoque</MenuItem>
+          <MenuItem href="#contribution" onClick={closeMenu}>En qué puedo aportar</MenuItem>
+          <MenuItem href="#principles" onClick={closeMenu}>Principios</MenuItem>
+          <MenuItem href="#career" onClick={closeMenu}>Evolución profesional</MenuItem>
+          <MenuItem href="#case-study" onClick={closeMenu}>Caso destacado</MenuItem>
+          <MenuItem href="#skills" onClick={closeMenu}>Capacidades técnicas</MenuItem>
+          <MenuItem href="#conversation" onClick={closeMenu}>Conversemos</MenuItem>
         </Menu>
       )}
     </>

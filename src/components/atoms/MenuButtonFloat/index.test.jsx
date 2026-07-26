@@ -9,21 +9,21 @@ describe("MenuButtonFloat", () => {
 
     fireEvent.click(trigger);
     expect(trigger).toHaveAttribute("aria-expanded", "true");
-    expect(screen.getByText("Perfil")).toBeInTheDocument();
+    expect(screen.getByText("Presentación")).toBeInTheDocument();
 
     fireEvent.mouseDown(document.body);
     expect(trigger).toHaveAttribute("aria-expanded", "false");
-    expect(screen.queryByText("Perfil")).not.toBeInTheDocument();
+    expect(screen.queryByText("Presentación")).not.toBeInTheDocument();
   });
 
   it("usa etiquetas alineadas con las secciones y se cierra al navegar", () => {
     render(<MenuButtonFloat />);
 
     fireEvent.click(screen.getByRole("button", { name: "Abrir navegación" }));
-    const link = screen.getByRole("link", { name: "Casos de arquitectura" });
+    const link = screen.getByRole("link", { name: "En qué puedo aportar" });
 
-    expect(link).toHaveAttribute("href", "#projects");
+    expect(link).toHaveAttribute("href", "#contribution");
     fireEvent.click(link);
-    expect(screen.queryByRole("link", { name: "Casos de arquitectura" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "En qué puedo aportar" })).not.toBeInTheDocument();
   });
 });

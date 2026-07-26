@@ -1,8 +1,22 @@
-# React + Vite
+# Ariel Aguilar · Technical Lead
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing profesional construida con React, Vite, React Router y styled-components.
 
-Currently, two official plugins are available:
+## Desarrollo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
+
+Validación:
+
+```bash
+npm run lint
+npm test
+npm run build
+```
+
+La narrativa se mantiene en `src/content/landing.js`. Las fuentes editoriales son `BRAND_CONTEXT.md` y `CAREER_STORY.md`; la dirección visual está en `IMAGE_PROMPTS.md`.
+
+Consulta `LANDING_CHANGELOG.md` para conocer rutas, decisiones y pendientes.

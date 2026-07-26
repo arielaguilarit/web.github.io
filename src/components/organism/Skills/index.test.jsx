@@ -8,11 +8,11 @@ describe("Skills", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "Capacidades para sistemas que deben escalar",
+        name: "Capacidades técnicas",
       }),
     ).toBeInTheDocument();
-    expect(screen.getAllByRole("article")).toHaveLength(5);
-    expect(screen.getByText("Arquitectura y liderazgo")).toBeInTheDocument();
+    expect(screen.getAllByRole("article")).toHaveLength(4);
+    expect(screen.getByText("Arquitectura")).toBeInTheDocument();
     expect(screen.getByText("AI Engineering")).toBeInTheDocument();
   });
 });

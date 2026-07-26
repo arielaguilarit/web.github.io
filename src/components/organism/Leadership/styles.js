@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Principles = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 
   article {
-    min-height: 190px;
+    min-height: 170px;
     padding: 24px;
     background: #0f172a;
     border-radius: 16px;

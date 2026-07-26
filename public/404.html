@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirigiendo…</title>
+    <script>
+      sessionStorage.setItem("spa-path", location.pathname + location.search + location.hash);
+      location.replace("/web.github.io/");
+    </script>
+  </head>
+  <body>Redirigiendo a la página solicitada…</body>
+</html>

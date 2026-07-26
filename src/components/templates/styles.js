@@ -26,7 +26,7 @@ export const Aside = styled.aside`
   }
 `;
 
-export const Main = styled.section`
+export const Main = styled.div`
   margin-left: 320px;
   display: flex;
   flex-direction: column;
@@ -39,6 +39,10 @@ export const Main = styled.section`
     min-height: 70vh;
     padding: 88px clamp(24px, 7vw, 112px);
     scroll-margin-top: 16px;
+  }
+
+  & > section:first-child {
+    min-height: 100vh;
   }
 
   & > section:nth-child(odd) {
@@ -68,6 +72,23 @@ export const Main = styled.section`
     color: #0f766e;
     font-weight: 700;
     text-underline-offset: 3px;
+  }
+
+  .section-eyebrow {
+    color: #0f766e;
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .section-cta {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 48px;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
   }
 
   @media (max-width: 768px) {

@@ -13,6 +13,11 @@ export default createGlobalStyle`
     scroll-behavior: smooth;
   }
 
+  :focus-visible {
+    outline: 3px solid #14b8a6;
+    outline-offset: 3px;
+  }
+
   body {
     min-width: 320px;
     background: #f8fafc;
@@ -39,5 +44,18 @@ export default createGlobalStyle`
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
   }
 `;
